@@ -3,223 +3,761 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jesús Vega | Desarrollador Full-Stack & Soluciones Web</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Fuente moderna -->
+    <title>Jesús Vega | Full-Stack Developer & Software Solutions</title>
+    <meta name="description" content="Desarrollador Full-Stack freelance. Creación de sitios web de alto rendimiento, APIs escalables y automatización de procesos. Entregas en 48-72h.">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Canvas Interactivo de Fondo (Constelación viva de partículas) -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Luces ambientales animadas -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
     <!-- Navegación -->
     <header class="navbar">
-        <div class="container nav-content">
-            <a href="#" class="logo">&lt;JesúsVega /&gt;</a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#habilidades">Habilidades</a></li>
-                    <li><a href="#proyectos">Proyectos</a></li>
-                    <li><a href="#contacto" class="btn-nav">Contactar</a></li>
-                </ul>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-bracket">&lt;</span>JesúsVega<span class="logo-slash">/</span><span class="logo-bracket">&gt;</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="#servicios">Servicios</a>
+                <a href="#calculadora">Calculadora</a>
+                <a href="#paquetes">Paquetes</a>
+                <a href="#proyectos">Portafolio</a>
+                <a href="#faq">FAQ</a>
             </nav>
+            <div class="nav-cta">
+                <a href="#contacto" class="btn btn-outline btn-sm">Contactar</a>
+            </div>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- HERO SECTION -->
         <section class="hero">
             <div class="container">
-                <div class="hero-badge">🟢 Disponible para proyectos freelance</div>
-                <h1 class="hero-title">Construyo software web <span class="gradient-text">rápido, escalable</span> y a medida</h1>
-                <p class="hero-subtitle">
-                    Ayudo a emprendedores, startups y empresas a materializar sus ideas: desde sitios web y landing pages de alto impacto hasta APIs y automatización de procesos.
+                <div class="status-pill float-animation">
+                    <span class="pulse-dot"></span>
+                    <span>Disponible para proyectos &bull; Noviembre 2026</span>
+                </div>
+                
+                <h1 class="hero-heading">
+                    Transformo ideas en <br>
+                    <span class="gradient-text typewriter" id="typewriterText"></span><span class="cursor">|</span>
+                </h1>
+                
+                <p class="hero-description">
+                    Desarrollo web a medida, APIs ultrarrápidas y automatización de procesos para negocios que no tienen tiempo que perder. Entregas ágiles en 48 a 72 horas con código impecable.
                 </p>
-                <div class="hero-actions">
-                    <a href="#contacto" class="btn btn-primary">Iniciar un proyecto</a>
-                    <a href="#proyectos" class="btn btn-secondary">Ver trabajos</a>
+
+                <div class="hero-buttons">
+                    <a href="#calculadora" class="btn btn-primary btn-glow pulse-btn">
+                        ⚡ Calcular Presupuesto Online
+                    </a>
+                    <a href="https://wa.me/34600000000?text=Hola%20Jesús,%20vi%20tu%20web%20y%20quiero%20cotizar%20un%20proyecto" target="_blank" class="btn btn-secondary">
+                        💬 Hablar por WhatsApp
+                    </a>
                 </div>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-number">48-72h</span>
-                        <span class="stat-label">Tiempo promedio de entrega (MVPs)</span>
+
+                <!-- Showcase de Terminal Interactiva Viva -->
+                <div class="terminal-card tilt-card" id="terminalTilt">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="dot dot-red"></span>
+                            <span class="dot dot-yellow"></span>
+                            <span class="dot dot-green"></span>
+                        </div>
+                        <div class="terminal-title">jesus-vega ~ portfolio-cli v2.6</div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Código limpio y documentado</span>
+                    <div class="terminal-body" id="termBody">
+                        <p class="term-line"><span class="term-prompt">❯</span> <span class="term-cmd">jesus --profile</span></p>
+                        <p class="term-output">{</p>
+                        <p class="term-output">&nbsp;&nbsp;<span class="t-key">"role"</span>: <span class="t-val">"Full-Stack Developer & Automation Engineer"</span>,</p>
+                        <p class="term-output">&nbsp;&nbsp;<span class="t-key">"stack"</span>: <span class="t-val">"React, Node.js, Python, PostgreSQL, REST APIs"</span>,</p>
+                        <p class="term-output">&nbsp;&nbsp;<span class="t-key">"turnaround"</span>: <span class="t-val">"48-72h para MVPs funcionales"</span>,</p>
+                        <p class="term-output">&nbsp;&nbsp;<span class="t-key">"status"</span>: <span class="t-val-green">"100% Listo para construir tu siguiente éxito"</span></p>
+                        <p class="term-output">}</p>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">Soporte</span>
-                        <span class="stat-label">Garantía post-entrega incluida</span>
+                </div>
+
+                <!-- Métricas animadas -->
+                <div class="metrics-bar">
+                    <div class="metric-item">
+                        <h3 class="counter" data-target="48">0</h3><span class="metric-suffix">h</span>
+                        <p>Entrega de prototipos</p>
+                    </div>
+                    <div class="metric-divider"></div>
+                    <div class="metric-item">
+                        <h3 class="counter" data-target="100">0</h3><span class="metric-suffix">%</span>
+                        <p>Código propio documentado</p>
+                    </div>
+                    <div class="metric-divider"></div>
+                    <div class="metric-item">
+                        <h3 class="counter" data-target="14">0</h3><span class="metric-suffix"> Días</span>
+                        <p>Garantía y soporte incluido</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Servicios -->
-        <section id="servicios" class="services">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Servicios Especializados</h2>
-                    <p>Soluciones técnicas diseñadas para resolver problemas reales de tu negocio.</p>
+        <!-- MARQUEE INFINITO DE TECNOLOGÍAS (MOVIMIENTO CONTINUO) -->
+        <div class="marquee-section">
+            <div class="marquee-track">
+                <div class="marquee-content">
+                    <span class="tech-tag">⚡ JavaScript (ES6+)</span>
+                    <span class="tech-tag">⚛️ React.js</span>
+                    <span class="tech-tag">🟢 Node.js</span>
+                    <span class="tech-tag">🐍 Python</span>
+                    <span class="tech-tag">🚀 Next.js</span>
+                    <span class="tech-tag">🐘 PostgreSQL</span>
+                    <span class="tech-tag">🍃 MongoDB</span>
+                    <span class="tech-tag">🔌 REST & GraphQL</span>
+                    <span class="tech-tag">🐳 Docker</span>
+                    <span class="tech-tag">🎨 Tailwind CSS</span>
+                    <span class="tech-tag">🤖 Web Scraping</span>
                 </div>
-                <div class="cards-grid">
-                    <div class="card">
-                        <div class="card-icon">💻</div>
-                        <h3>Desarrollo Web & Landing Pages</h3>
-                        <p>Sitios modernos, rápidos y optimizados para dispositivos móviles con diseño enfocado en la conversión.</p>
-                        <ul class="card-features">
-                            <li>Diseño responsive (móvil y escritorio)</li>
-                            <li>Velocidad de carga ultra rápida</li>
-                            <li>Optimización SEO básica</li>
+                <!-- Duplicado para efecto loop infinito sin salto -->
+                <div class="marquee-content" aria-hidden="true">
+                    <span class="tech-tag">⚡ JavaScript (ES6+)</span>
+                    <span class="tech-tag">⚛️ React.js</span>
+                    <span class="tech-tag">🟢 Node.js</span>
+                    <span class="tech-tag">🐍 Python</span>
+                    <span class="tech-tag">🚀 Next.js</span>
+                    <span class="tech-tag">🐘 PostgreSQL</span>
+                    <span class="tech-tag">🍃 MongoDB</span>
+                    <span class="tech-tag">🔌 REST & GraphQL</span>
+                    <span class="tech-tag">🐳 Docker</span>
+                    <span class="tech-tag">🎨 Tailwind CSS</span>
+                    <span class="tech-tag">🤖 Web Scraping</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SERVICIOS -->
+        <section id="servicios" class="section">
+            <div class="container">
+                <div class="section-title-wrap">
+                    <span class="section-tag">SERVICIOS DE ÉLITE</span>
+                    <h2>Soluciones diseñadas para multiplicar tus resultados</h2>
+                    <p>No solo escribo código; creo herramientas técnicas que te ahorran tiempo y aumentan tu facturación.</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card tilt-card">
+                        <div class="card-glow-layer"></div>
+                        <div class="service-icon-box">🚀</div>
+                        <h3>Landing Pages & Conversión</h3>
+                        <p>Páginas web modernas, de carga instantánea y optimizadas para capturar clientes potenciales o vender productos directamente.</p>
+                        <ul class="check-list">
+                            <li>Diseño ultra responsivo (Mobile-First)</li>
+                            <li>Velocidad Google PageSpeed > 90/100</li>
+                            <li>Integración de Analytics y WhatsApp</li>
                         </ul>
                     </div>
 
-                    <div class="card">
-                        <div class="card-icon">⚙️</div>
-                        <h3>APIs & Integraciones Backend</h3>
-                        <p>Arquitectura sólida para conectar aplicaciones, bases de datos y servicios de terceros de forma segura.</p>
-                        <ul class="card-features">
-                            <li>APIs RESTful seguras</li>
+                    <div class="service-card featured-service tilt-card">
+                        <div class="beam-border"></div>
+                        <div class="featured-badge">MÁS DEMANDADO</div>
+                        <div class="service-icon-box">⚡</div>
+                        <h3>Desarrollo Web Full-Stack & MVPs</h3>
+                        <p>Lleva tu idea de negocio a la realidad en días. Aplicaciones web completas con autenticación, paneles de usuario y bases de datos.</p>
+                        <ul class="check-list">
+                            <li>Frontend dinámico e interactivo</li>
+                            <li>Backend seguro (Node.js, Express, Python)</li>
                             <li>Integración de pagos (Stripe, PayPal)</li>
-                            <li>Bases de datos SQL y NoSQL</li>
                         </ul>
                     </div>
 
-                    <div class="card">
-                        <div class="card-icon">⚡</div>
-                        <h3>Automatización & Scripts</h3>
-                        <p>Ahorra horas de trabajo repetitivo mediante scripts personalizados, bots y herramientas de extracción de datos.</p>
-                        <ul class="card-features">
+                    <div class="service-card tilt-card">
+                        <div class="card-glow-layer"></div>
+                        <div class="service-icon-box">🤖</div>
+                        <h3>Automatización & Bots a Medida</h3>
+                        <p>Elimina las tareas manuales y repetitivas. Automatizo flujos de trabajo, extracción de datos web y alertas inteligentes.</p>
+                        <ul class="check-list">
                             <li>Web Scraping estructurado</li>
-                            <li>Procesamiento y limpieza de datos</li>
-                            <li>Bots de mensajería y alertas</li>
+                            <li>Conexión de sistemas mediante APIs</li>
+                            <li>Bots de mensajería (Telegram, Discord)</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Habilidades / Tech Stack -->
-        <section id="habilidades" class="skills">
+        <!-- CALCULADORA INTERACTIVA DE PRESUPUESTOS -->
+        <section id="calculadora" class="section calc-section">
             <div class="container">
-                <div class="section-header">
-                    <h2>Stack Tecnológico</h2>
-                    <p>Herramientas y lenguajes modernos para soluciones confiables.</p>
-                </div>
-                <div class="skills-wrapper">
-                    <div class="skill-category">
-                        <h4>Frontend</h4>
-                        <div class="badges">
-                            <span class="badge">HTML5 / CSS3</span>
-                            <span class="badge">JavaScript (ES6+)</span>
-                            <span class="badge">React</span>
-                            <span class="badge">Tailwind CSS</span>
-                        </div>
+                <div class="calc-box tilt-card">
+                    <div class="calc-header">
+                        <span class="section-tag">HERRAMIENTA EN VIVO</span>
+                        <h2>Calculadora de Presupuesto Estimado</h2>
+                        <p>Configura tu proyecto en segundos y obtén un estimado transparente sin sorpresas.</p>
                     </div>
-                    <div class="skill-category">
-                        <h4>Backend & Datos</h4>
-                        <div class="badges">
-                            <span class="badge">Node.js</span>
-                            <span class="badge">Express</span>
-                            <span class="badge">Python</span>
-                            <span class="badge">PostgreSQL / MySQL</span>
-                            <span class="badge">MongoDB</span>
+
+                    <div class="calc-grid">
+                        <div class="calc-controls">
+                            <!-- Tipo de Proyecto -->
+                            <div class="control-group">
+                                <label class="control-label">1. ¿Qué tipo de solución necesitas?</label>
+                                <div class="options-pills" id="typeGroup">
+                                    <button type="button" class="pill active" data-price="150" data-name="Landing Page de Alta Conversión">Landing Page</button>
+                                    <button type="button" class="pill" data-price="350" data-name="Aplicación Web / MVP Completo">Web App / MVP</button>
+                                    <button type="button" class="pill" data-price="200" data-name="Automatización / Bot / Scraping">Automatización / Bot</button>
+                                    <button type="button" class="pill" data-price="180" data-name="Desarrollo o Integración de API">API / Backend</button>
+                                </div>
+                            </div>
+
+                            <!-- Extras -->
+                            <div class="control-group">
+                                <label class="control-label">2. Añade funcionalidades extra (opcional):</label>
+                                <div class="checkbox-list">
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" value="60" data-feature="Pasarela de Pagos (Stripe/PayPal)">
+                                        <span class="checkmark"></span>
+                                        Integración de Pagos Online (+60 USD)
+                                    </label>
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" value="50" data-feature="Panel de Administración Privado">
+                                        <span class="checkmark"></span>
+                                        Panel de Administración Privado (+50 USD)
+                                    </label>
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" value="40" data-feature="Integración de Base de Datos y Auth">
+                                        <span class="checkmark"></span>
+                                        Base de datos con Registro/Login (+40 USD)
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Tiempo de Entrega -->
+                            <div class="control-group">
+                                <label class="control-label">3. Tiempo de entrega deseado:</label>
+                                <div class="options-pills" id="speedGroup">
+                                    <button type="button" class="pill active" data-speed="normal" data-mult="1.0">Estándar (5-7 días)</button>
+                                    <button type="button" class="pill" data-speed="fast" data-mult="1.25">⚡ Express (48-72 horas)</button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Herramientas & Despliegue</h4>
-                        <div class="badges">
-                            <span class="badge">Git / GitHub</span>
-                            <span class="badge">Docker</span>
-                            <span class="badge">REST APIs</span>
-                            <span class="badge">Linux / VPS</span>
+
+                        <!-- Resumen y Llamada a la Acción -->
+                        <div class="calc-summary-card">
+                            <div class="summary-top">
+                                <span>Presupuesto Estimado</span>
+                                <div class="price-display">
+                                    <span class="currency">$</span>
+                                    <span id="totalPrice">150</span>
+                                    <span class="usd">USD</span>
+                                </div>
+                                <span class="launch-discount">🔥 Incluye 20% descuento por lanzamiento</span>
+                            </div>
+
+                            <div class="summary-details">
+                                <p id="summaryText">Proyecto: <strong>Landing Page de Alta Conversión</strong></p>
+                                <p id="summaryDelivery">Plazo: <strong>Estándar (5-7 días)</strong></p>
+                            </div>
+
+                            <a id="btnOrderWhatsApp" href="#" target="_blank" class="btn btn-primary btn-block btn-glow pulse-btn">
+                                Solicitar Proyecto con Este Presupuesto &rarr;
+                            </a>
+                            <span class="summary-note">🔒 Sin compromiso previo. Conversamos los detalles por chat.</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Proyectos de Muestra / Portafolio -->
-        <section id="proyectos" class="projects">
+        <!-- PAQUETES CLAROS DE PRECIOS -->
+        <section id="paquetes" class="section">
             <div class="container">
-                <div class="section-header">
-                    <h2>Proyectos Destacados</h2>
-                    <p>Ejemplos de implementaciones y soluciones desarrolladas.</p>
+                <div class="section-title-wrap">
+                    <span class="section-tag">TARIFAS TRANSPARENTES</span>
+                    <h2>Paquetes Todo Incluido</h2>
+                    <p>Precios fijos sin costes ocultos. Sé exactamente lo que pagas desde el minuto uno.</p>
                 </div>
+
+                <div class="pricing-grid">
+                    <!-- Paquete 1 -->
+                    <div class="pricing-card tilt-card">
+                        <div class="pricing-header">
+                            <h3>Express Landing</h3>
+                            <p>Perfecto para validar una idea de negocio o lanzar un producto rápido.</p>
+                            <div class="price">$150 <span class="period">/ pago único</span></div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>✓ Diseño responsive personalizado</li>
+                            <li>✓ Entrega en 48 horas hábiles</li>
+                            <li>✓ Formulario de contacto directo a email</li>
+                            <li>✓ Botón flotante de WhatsApp</li>
+                            <li>✓ Despliegue gratuito en hosting</li>
+                            <li>✓ 7 días de soporte garantizado</li>
+                        </ul>
+                        <a href="https://wa.me/34600000000?text=Hola%20Jesús,%20me%20interesa%20el%20paquete%20Express%20Landing" target="_blank" class="btn btn-secondary btn-block">Elegir Express Landing</a>
+                    </div>
+
+                    <!-- Paquete 2 (Destacado) -->
+                    <div class="pricing-card featured-pricing tilt-card">
+                        <div class="beam-border"></div>
+                        <div class="popular-ribbon">MÁS POPULAR</div>
+                        <div class="pricing-header">
+                            <h3>MVP Web Completo</h3>
+                            <p>Para emprendedores que necesitan una plataforma funcional lista para monetizar.</p>
+                            <div class="price">$350 <span class="period">/ pago único</span></div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>✓ Todo lo del paquete Express</li>
+                            <li>✓ Frontend interactivo con React / JS</li>
+                            <li>✓ Backend & API REST personalizada</li>
+                            <li>✓ Base de datos y autenticación de usuarios</li>
+                            <li>✓ Pasarela de pagos integrada (Stripe/PayPal)</li>
+                            <li>✓ 14 días de soporte post-entrega</li>
+                        </ul>
+                        <a href="https://wa.me/34600000000?text=Hola%20Jesús,%20me%20interesa%20el%20paquete%20MVP%20Web%20Completo" target="_blank" class="btn btn-primary btn-block btn-glow pulse-btn">Elegir MVP Completo</a>
+                    </div>
+
+                    <!-- Paquete 3 -->
+                    <div class="pricing-card tilt-card">
+                        <div class="pricing-header">
+                            <h3>Automatización & Data</h3>
+                            <p>Para empresas y autónomos que buscan ahorrar decenas de horas semanales.</p>
+                            <div class="price">$220 <span class="period">/ pago único</span></div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>✓ Scraper web a medida para recolección</li>
+                            <li>✓ Exportación a Excel, Sheets o base de datos</li>
+                            <li>✓ Alertas automáticas por Telegram/Email</li>
+                            <li>✓ Conexión entre aplicaciones (Webhooks)</li>
+                            <li>✓ Código documentado y script ejecutable</li>
+                            <li>✓ 10 días de soporte post-entrega</li>
+                        </ul>
+                        <a href="https://wa.me/34600000000?text=Hola%20Jesús,%20me%20interesa%20el%20paquete%20de%20Automatización" target="_blank" class="btn btn-secondary btn-block">Elegir Automatización</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROYECTOS / PORTAFOLIO -->
+        <section id="proyectos" class="section">
+            <div class="container">
+                <div class="section-title-wrap">
+                    <span class="section-tag">CASOS DE ESTUDIO</span>
+                    <h2>Proyectos de Muestra</h2>
+                    <p>Un vistazo a la calidad, arquitectura y diseño que entrego en cada desarrollo.</p>
+                </div>
+
                 <div class="projects-grid">
-                    <!-- Proyecto 1 -->
-                    <div class="project-card">
-                        <div class="project-body">
-                            <div class="project-tags">
-                                <span>JavaScript</span>
-                                <span>API REST</span>
-                                <span>CSS3</span>
+                    <div class="project-card tilt-card">
+                        <div class="project-header">
+                            <span class="project-badge">Full-Stack</span>
+                            <span class="project-badge">React & Node</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Dashboard de Finanzas SaaS</h3>
+                            <p>Plataforma para monitorización de suscripciones, ingresos recurrentes (MRR) y analíticas con gráficos interactivos y sincronización en tiempo real.</p>
+                            <div class="project-footer">
+                                <span class="project-metric">📈 +35% velocidad de carga</span>
+                                <a href="https://github.com/jesusvegavicente-web" target="_blank" class="link-btn">Ver Repositorio &rarr;</a>
                             </div>
-                            <h3>Dashboard de Métricas & Analíticas</h3>
-                            <p>Plataforma para visualización de KPIs de negocio en tiempo real con consumo de endpoints REST y gráficos dinámicos.</p>
-                            <a href="https://github.com/jesusvegavicente-web" target="_blank" class="project-link">Ver en GitHub &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- Proyecto 2 -->
-                    <div class="project-card">
-                        <div class="project-body">
-                            <div class="project-tags">
-                                <span>Python</span>
-                                <span>Automation</span>
-                                <span>Scraping</span>
+                    <div class="project-card tilt-card">
+                        <div class="project-header">
+                            <span class="project-badge">Python</span>
+                            <span class="project-badge">Automatización</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Monitor de Precios & Scraping</h3>
+                            <p>Sistema automatizado que rastrea cambios de precios en catálogos de comercio electrónico, detecta ofertas y envía alertas automáticas instantáneas.</p>
+                            <div class="project-footer">
+                                <span class="project-metric">⏱ Ahorro de 12h/semana</span>
+                                <a href="https://github.com/jesusvegavicente-web" target="_blank" class="link-btn">Ver Repositorio &rarr;</a>
                             </div>
-                            <h3>Pipeline de Extracción & Automatización</h3>
-                            <p>Script automatizado para monitorización de precios de competidores con exportación programada a hojas de cálculo y alertas.</p>
-                            <a href="https://github.com/jesusvegavicente-web" target="_blank" class="project-link">Ver en GitHub &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- Proyecto 3 -->
-                    <div class="project-card">
-                        <div class="project-body">
-                            <div class="project-tags">
-                                <span>React</span>
-                                <span>Responsive</span>
-                                <span>Landing</span>
+                    <div class="project-card tilt-card">
+                        <div class="project-header">
+                            <span class="project-badge">Alta Conversión</span>
+                            <span class="project-badge">SEO</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Landing Page para Agencia Tech</h3>
+                            <p>Página de aterrizaje optimizada con animaciones fluidas, tiempo de carga menor a 1 segundo y tasa de conversión superior al promedio.</p>
+                            <div class="project-footer">
+                                <span class="project-metric">⚡ Puntuación 98 en Lighthouse</span>
+                                <a href="https://github.com/jesusvegavicente-web" target="_blank" class="link-btn">Ver Repositorio &rarr;</a>
                             </div>
-                            <h3>Landing Page de Alta Conversión</h3>
-                            <p>Sitio estático enfocado en captación de leads con formulario interactivo, validaciones en cliente y diseño móvil de vanguardia.</p>
-                            <a href="https://github.com/jesusvegavicente-web" target="_blank" class="project-link">Ver en GitHub &rarr;</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contacto -->
-        <section id="contacto" class="contact">
+        <!-- PREGUNTAS FRECUENTES (FAQ INTERACTIVO) -->
+        <section id="faq" class="section faq-section">
             <div class="container">
-                <div class="contact-box">
-                    <h2>¿Tienes una idea o proyecto en mente?</h2>
-                    <p>Hablemos sobre tus requerimientos. Te responderé en menos de 24 horas con una estimación gratuita y sin compromiso.</p>
-                    <div class="contact-buttons">
-                        <a href="mailto:tu-correo@example.com" class="btn btn-primary">Enviar un correo electrónico</a>
-                        <a href="https://github.com/jesusvegavicente-web" target="_blank" class="btn btn-secondary">Explorar mi GitHub</a>
+                <div class="section-title-wrap">
+                    <span class="section-tag">DUDAS RESUELTAS</span>
+                    <h2>Preguntas Frecuentes</h2>
+                    <p>Todo lo que necesitas saber antes de comenzar a trabajar juntos.</p>
+                </div>
+
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>¿Cómo es el proceso y la forma de pago?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Trabajamos con total seguridad: un anticipo del 50% al iniciar y el 50% restante una vez que el proyecto esté completamente finalizado y probado a tu entera satisfacción. Aceptamos PayPal, transferencia bancaria y tarjeta.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>¿Soy dueño del código que desarrollas?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sí, 100%. Todo el código desarrollado, repositorio de GitHub, credenciales y documentación te pertenecen en su totalidad desde el momento de la entrega final.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>¿Qué ocurre si necesito cambios o ajustes tras la entrega?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Todos mis paquetes incluyen entre 7 y 14 días de soporte post-entrega sin ningún coste adicional para resolver dudas, corregir cualquier incidencia y asegurar que todo funcione a la perfección.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>¿Cuánto tiempo tardas en entregar una landing page o MVP?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Para landing pages y scripts de automatización la entrega estándar es de 48 a 72 horas hábiles. Para aplicaciones completas con backend y bases de datos, el plazo habitual es de 5 a 7 días laborables.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE CONTACTO FINAL -->
+        <section id="contacto" class="section cta-final">
+            <div class="container">
+                <div class="cta-card tilt-card">
+                    <div class="beam-border"></div>
+                    <h2>¿Listo para poner en marcha tu proyecto?</h2>
+                    <p>Hablemos sobre tus requerimientos hoy mismo. Recibirás una propuesta técnica personalizada en menos de 24 horas.</p>
+                    
+                    <div class="cta-actions">
+                        <a href="https://wa.me/34600000000?text=Hola%20Jesús,%20quiero%20cotizar%20un%20proyecto%20contigo" target="_blank" class="btn btn-primary btn-lg btn-glow pulse-btn">
+                            💬 Enviar Mensaje por WhatsApp
+                        </a>
+                        <button id="copyEmailBtn" class="btn btn-secondary btn-lg">
+                            📋 Copiar Correo Electrónico
+                        </button>
+                    </div>
+
+                    <div id="copyToast" class="toast">¡Correo copiado al portapapeles!</div>
+
+                    <div class="guarantee-box">
+                        🛡️ <strong>Garantía de respuesta rápida:</strong> Atención directa conmigo sin intermediarios ni agencias lentas.
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
-        <div class="container footer-content">
-            <p>&copy; 2026 Jesús Vega. Desarrollador de Software.</p>
-            <p class="footer-links">
-                <a href="#servicios">Servicios</a> &bull; 
-                <a href="#habilidades">Stack</a> &bull; 
-                <a href="#proyectos">Proyectos</a>
-            </p>
+        <div class="container footer-layout">
+            <div class="footer-left">
+                <a href="#" class="logo">&lt;JesúsVega /&gt;</a>
+                <p>Desarrollo de software y soluciones web orientadas al crecimiento de negocios.</p>
+            </div>
+            <div class="footer-right">
+                <p>&copy; 2026 Jesús Vega Vicente. Todos los derechos reservados.</p>
+                <div class="footer-socials">
+                    <a href="https://github.com/jesusvegavicente-web" target="_blank">GitHub</a> &bull;
+                    <a href="#servicios">Servicios</a> &bull;
+                    <a href="#calculadora">Calculadora</a> &bull;
+                    <a href="#contacto">Contacto</a>
+                </div>
+            </div>
         </div>
     </footer>
 
+    <!-- SCRIPT DE ANIMACIONES AVANZADAS (PARTÍCULAS, TYPEWRITER, 3D TILT, CONTADORES) -->
+    <script>
+        // 1. Efecto Máquina de Escribir (Typewriter) en el Hero
+        const phrases = [
+            "código de alto impacto.",
+            "sitios web que venden.",
+            "MVPs listos en 48 horas.",
+            "automatizaciones eficientes."
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typewriterEl = document.getElementById("typewriterText");
+
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            if (isDeleting) {
+                typewriterEl.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterEl.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 40 : 80;
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                typeSpeed = 2000; // Pausa al completar la frase
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeSpeed = 400;
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+        type();
+
+        // 2. Canvas de Partículas Interactivas (Constelación viva)
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouse = { x: null, y: null, radius: 120 };
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+        });
+        window.addEventListener('mouseleave', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.8;
+                this.speedX = (Math.random() - 0.5) * 0.8;
+                this.speedY = (Math.random() - 0.5) * 0.8;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
+                if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
+
+                // Interacción con ratón
+                if (mouse.x && mouse.y) {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < mouse.radius) {
+                        this.x -= dx * 0.03;
+                        this.y -= dy * 0.03;
+                    }
+                }
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(56, 189, 248, 0.4)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        const particleCount = Math.min(window.innerWidth < 768 ? 35 : 75, 90);
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+
+                // Conectar líneas entre partículas cercanas
+                for (let j = i; j < particles.length; j++) {
+                    let dx = particles[i].x - particles[j].x;
+                    let dy = particles[i].y - particles[j].y;
+                    let dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 110) {
+                        ctx.strokeStyle = `rgba(56, 189, 248, ${0.15 - dist / 800})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // 3. Efecto 3D Tilt en Tarjetas (Inclinación interactiva)
+        document.querySelectorAll('.tilt-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = ((y - centerY) / centerY) * -5;
+                const rotateY = ((x - centerX) / centerX) * 5;
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+            });
+        });
+
+        // 4. Animación de Contadores Numéricos al hacer Scroll
+        let countersDone = false;
+        const counters = document.querySelectorAll('.counter');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !countersDone) {
+                    countersDone = true;
+                    counters.forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        let count = 0;
+                        const increment = target / 40;
+                        const updateCount = () => {
+                            count += increment;
+                            if (count < target) {
+                                counter.innerText = Math.ceil(count);
+                                setTimeout(updateCount, 25);
+                            } else {
+                                counter.innerText = target;
+                            }
+                        };
+                        updateCount();
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const metricsBar = document.querySelector('.metrics-bar');
+        if (metricsBar) observer.observe(metricsBar);
+
+        // 5. Calculadora Interactiva de Presupuestos
+        const typeButtons = document.querySelectorAll('#typeGroup .pill');
+        const speedButtons = document.querySelectorAll('#speedGroup .pill');
+        const checkboxes = document.querySelectorAll('.custom-checkbox input');
+        const priceDisplay = document.getElementById('totalPrice');
+        const summaryText = document.getElementById('summaryText');
+        const summaryDelivery = document.getElementById('summaryDelivery');
+        const btnOrderWhatsApp = document.getElementById('btnOrderWhatsApp');
+
+        let basePrice = 150;
+        let projectName = "Landing Page de Alta Conversión";
+        let speedMult = 1.0;
+        let deliveryText = "Estándar (5-7 días)";
+
+        function updateCalculator() {
+            let extrasTotal = 0;
+            let selectedExtras = [];
+            checkboxes.forEach(cb => {
+                if (cb.checked) {
+                    extrasTotal += parseFloat(cb.value);
+                    selectedExtras.push(cb.getAttribute('data-feature'));
+                }
+            });
+
+            const total = Math.round((basePrice + extrasTotal) * speedMult);
+            priceDisplay.textContent = total;
+
+            summaryText.innerHTML = `Proyecto: <strong>${projectName}</strong>` + 
+                (selectedExtras.length > 0 ? `<br><small>Extras: ${selectedExtras.join(', ')}</small>` : '');
+            summaryDelivery.innerHTML = `Plazo: <strong>${deliveryText}</strong>`;
+
+            const message = encodeURIComponent(
+                `Hola Jesús! Usé la calculadora de tu web y quiero cotizar:\n` +
+                `- Proyecto: ${projectName}\n` +
+                (selectedExtras.length > 0 ? `- Extras: ${selectedExtras.join(', ')}\n` : '') +
+                `- Plazo: ${deliveryText}\n` +
+                `- Estimado: $${total} USD\n¿Podemos hablar?`
+            );
+            btnOrderWhatsApp.href = `https://wa.me/34600000000?text=${message}`;
+        }
+
+        typeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                typeButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                basePrice = parseFloat(btn.getAttribute('data-price'));
+                projectName = btn.getAttribute('data-name');
+                updateCalculator();
+            });
+        });
+
+        speedButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                speedButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                speedMult = parseFloat(btn.getAttribute('data-mult'));
+                deliveryText = btn.textContent;
+                updateCalculator();
+            });
+        });
+
+        checkboxes.forEach(cb => cb.addEventListener('change', updateCalculator));
+        updateCalculator();
+
+        // 6. Acordeón FAQ
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                faqItem.classList.toggle('active');
+                const icon = button.querySelector('.faq-icon');
+                icon.textContent = faqItem.classList.contains('active') ? '−' : '+';
+            });
+        });
+
+        // 7. Copiar Email
+        const copyBtn = document.getElementById('copyEmailBtn');
+        const toast = document.getElementById('copyToast');
+        const emailToCopy = "jesusvegavicente@gmail.com";
+
+        if (copyBtn) {
+            copyBtn.addEventListener('click', () => {
+                navigator.clipboard.writeText(emailToCopy).then(() => {
+                    toast.classList.add('show');
+                    setTimeout(() => toast.classList.remove('show'), 3000);
+                }).catch(() => {
+                    window.location.href = `mailto:${emailToCopy}`;
+                });
+            });
+        }
+    </script>
 </body>
 </html>
