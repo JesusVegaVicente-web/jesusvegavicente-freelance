@@ -13,10 +13,10 @@
 </head>
 <body>
 
-    <!-- Canvas Interactivo de Fondo (Constelación viva de partículas) -->
+    <!-- Fondo interactivo con partículas sutiles -->
     <canvas id="bg-canvas"></canvas>
 
-    <!-- Luces ambientales animadas -->
+    <!-- Luces ambientales de fondo -->
     <div class="bg-glow bg-glow-1"></div>
     <div class="bg-glow bg-glow-2"></div>
 
@@ -40,7 +40,7 @@
     </header>
 
     <main>
-        <!-- HERO SECTION -->
+        <!-- HERO SECTION (Estable, potente y sin saltos visuales) -->
         <section class="hero">
             <div class="container">
                 <div class="status-pill float-animation">
@@ -49,8 +49,8 @@
                 </div>
                 
                 <h1 class="hero-heading">
-                    Transformo ideas en <br>
-                    <span class="gradient-text typewriter" id="typewriterText"></span><span class="cursor">|</span>
+                    Transformo tus ideas en <br>
+                    <span class="gradient-text">software de alto impacto</span> que genera ventas
                 </h1>
                 
                 <p class="hero-description">
@@ -76,7 +76,7 @@
                         </div>
                         <div class="terminal-title">jesus-vega ~ portfolio-cli v2.6</div>
                     </div>
-                    <div class="terminal-body" id="termBody">
+                    <div class="terminal-body">
                         <p class="term-line"><span class="term-prompt">❯</span> <span class="term-cmd">jesus --profile</span></p>
                         <p class="term-output">{</p>
                         <p class="term-output">&nbsp;&nbsp;<span class="t-key">"role"</span>: <span class="t-val">"Full-Stack Developer & Automation Engineer"</span>,</p>
@@ -87,27 +87,33 @@
                     </div>
                 </div>
 
-                <!-- Métricas animadas -->
+                <!-- Métricas animadas corregidas (Números y unidades juntos en una sola línea) -->
                 <div class="metrics-bar">
                     <div class="metric-item">
-                        <h3 class="counter" data-target="48">0</h3><span class="metric-suffix">h</span>
+                        <div class="metric-val">
+                            <span class="counter" data-target="48">48</span><span class="metric-unit">h</span>
+                        </div>
                         <p>Entrega de prototipos</p>
                     </div>
                     <div class="metric-divider"></div>
                     <div class="metric-item">
-                        <h3 class="counter" data-target="100">0</h3><span class="metric-suffix">%</span>
+                        <div class="metric-val">
+                            <span class="counter" data-target="100">100</span><span class="metric-unit">%</span>
+                        </div>
                         <p>Código propio documentado</p>
                     </div>
                     <div class="metric-divider"></div>
                     <div class="metric-item">
-                        <h3 class="counter" data-target="14">0</h3><span class="metric-suffix"> Días</span>
+                        <div class="metric-val">
+                            <span class="counter" data-target="14">14</span><span class="metric-unit"> Días</span>
+                        </div>
                         <p>Garantía y soporte incluido</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- MARQUEE INFINITO DE TECNOLOGÍAS (MOVIMIENTO CONTINUO) -->
+        <!-- MARQUEE INFINITO DE TECNOLOGÍAS -->
         <div class="marquee-section">
             <div class="marquee-track">
                 <div class="marquee-content">
@@ -118,12 +124,11 @@
                     <span class="tech-tag">🚀 Next.js</span>
                     <span class="tech-tag">🐘 PostgreSQL</span>
                     <span class="tech-tag">🍃 MongoDB</span>
-                    <span class="tech-tag">🔌 REST & GraphQL</span>
+                    <span class="tech-tag">🔌 REST APIs</span>
                     <span class="tech-tag">🐳 Docker</span>
                     <span class="tech-tag">🎨 Tailwind CSS</span>
                     <span class="tech-tag">🤖 Web Scraping</span>
                 </div>
-                <!-- Duplicado para efecto loop infinito sin salto -->
                 <div class="marquee-content" aria-hidden="true">
                     <span class="tech-tag">⚡ JavaScript (ES6+)</span>
                     <span class="tech-tag">⚛️ React.js</span>
@@ -132,7 +137,7 @@
                     <span class="tech-tag">🚀 Next.js</span>
                     <span class="tech-tag">🐘 PostgreSQL</span>
                     <span class="tech-tag">🍃 MongoDB</span>
-                    <span class="tech-tag">🔌 REST & GraphQL</span>
+                    <span class="tech-tag">🔌 REST APIs</span>
                     <span class="tech-tag">🐳 Docker</span>
                     <span class="tech-tag">🎨 Tailwind CSS</span>
                     <span class="tech-tag">🤖 Web Scraping</span>
@@ -151,7 +156,6 @@
 
                 <div class="services-grid">
                     <div class="service-card tilt-card">
-                        <div class="card-glow-layer"></div>
                         <div class="service-icon-box">🚀</div>
                         <h3>Landing Pages & Conversión</h3>
                         <p>Páginas web modernas, de carga instantánea y optimizadas para capturar clientes potenciales o vender productos directamente.</p>
@@ -176,7 +180,6 @@
                     </div>
 
                     <div class="service-card tilt-card">
-                        <div class="card-glow-layer"></div>
                         <div class="service-icon-box">🤖</div>
                         <h3>Automatización & Bots a Medida</h3>
                         <p>Elimina las tareas manuales y repetitivas. Automatizo flujos de trabajo, extracción de datos web y alertas inteligentes.</p>
@@ -498,50 +501,13 @@
         </div>
     </footer>
 
-    <!-- SCRIPT DE ANIMACIONES AVANZADAS (PARTÍCULAS, TYPEWRITER, 3D TILT, CONTADORES) -->
+    <!-- SCRIPT DE INTERACCIÓN Y EFECTOS PULIDOS -->
     <script>
-        // 1. Efecto Máquina de Escribir (Typewriter) en el Hero
-        const phrases = [
-            "código de alto impacto.",
-            "sitios web que venden.",
-            "MVPs listos en 48 horas.",
-            "automatizaciones eficientes."
-        ];
-        let phraseIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typewriterEl = document.getElementById("typewriterText");
-
-        function type() {
-            const currentPhrase = phrases[phraseIndex];
-            if (isDeleting) {
-                typewriterEl.textContent = currentPhrase.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typewriterEl.textContent = currentPhrase.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            let typeSpeed = isDeleting ? 40 : 80;
-
-            if (!isDeleting && charIndex === currentPhrase.length) {
-                typeSpeed = 2000; // Pausa al completar la frase
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                phraseIndex = (phraseIndex + 1) % phrases.length;
-                typeSpeed = 400;
-            }
-
-            setTimeout(type, typeSpeed);
-        }
-        type();
-
-        // 2. Canvas de Partículas Interactivas (Constelación viva)
+        // 1. Canvas de Partículas Interactivas Suaves
         const canvas = document.getElementById('bg-canvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
-        let mouse = { x: null, y: null, radius: 120 };
+        let mouse = { x: null, y: null, radius: 110 };
 
         function resizeCanvas() {
             canvas.width = window.innerWidth;
@@ -563,9 +529,9 @@
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 0.8;
-                this.speedX = (Math.random() - 0.5) * 0.8;
-                this.speedY = (Math.random() - 0.5) * 0.8;
+                this.size = Math.random() * 1.8 + 0.6;
+                this.speedX = (Math.random() - 0.5) * 0.6;
+                this.speedY = (Math.random() - 0.5) * 0.6;
             }
             update() {
                 this.x += this.speedX;
@@ -573,26 +539,25 @@
                 if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
                 if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
 
-                // Interacción con ratón
                 if (mouse.x && mouse.y) {
                     let dx = mouse.x - this.x;
                     let dy = mouse.y - this.y;
                     let dist = Math.sqrt(dx * dx + dy * dy);
                     if (dist < mouse.radius) {
-                        this.x -= dx * 0.03;
-                        this.y -= dy * 0.03;
+                        this.x -= dx * 0.02;
+                        this.y -= dy * 0.02;
                     }
                 }
             }
             draw() {
-                ctx.fillStyle = 'rgba(56, 189, 248, 0.4)';
+                ctx.fillStyle = 'rgba(56, 189, 248, 0.35)';
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
             }
         }
 
-        const particleCount = Math.min(window.innerWidth < 768 ? 35 : 75, 90);
+        const particleCount = Math.min(window.innerWidth < 768 ? 30 : 60, 75);
         for (let i = 0; i < particleCount; i++) {
             particles.push(new Particle());
         }
@@ -603,13 +568,12 @@
                 particles[i].update();
                 particles[i].draw();
 
-                // Conectar líneas entre partículas cercanas
                 for (let j = i; j < particles.length; j++) {
                     let dx = particles[i].x - particles[j].x;
                     let dy = particles[i].y - particles[j].y;
                     let dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 110) {
-                        ctx.strokeStyle = `rgba(56, 189, 248, ${0.15 - dist / 800})`;
+                    if (dist < 100) {
+                        ctx.strokeStyle = `rgba(56, 189, 248, ${0.12 - dist / 900})`;
                         ctx.lineWidth = 0.5;
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
@@ -622,7 +586,7 @@
         }
         animateParticles();
 
-        // 3. Efecto 3D Tilt en Tarjetas (Inclinación interactiva)
+        // 2. Efecto 3D Tilt Sutil en Tarjetas
         document.querySelectorAll('.tilt-card').forEach(card => {
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
@@ -630,9 +594,9 @@
                 const y = e.clientY - rect.top;
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
-                const rotateX = ((y - centerY) / centerY) * -5;
-                const rotateY = ((x - centerX) / centerX) * 5;
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+                const rotateX = ((y - centerY) / centerY) * -4;
+                const rotateY = ((x - centerX) / centerX) * 4;
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
             });
 
             card.addEventListener('mouseleave', () => {
@@ -640,36 +604,7 @@
             });
         });
 
-        // 4. Animación de Contadores Numéricos al hacer Scroll
-        let countersDone = false;
-        const counters = document.querySelectorAll('.counter');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !countersDone) {
-                    countersDone = true;
-                    counters.forEach(counter => {
-                        const target = +counter.getAttribute('data-target');
-                        let count = 0;
-                        const increment = target / 40;
-                        const updateCount = () => {
-                            count += increment;
-                            if (count < target) {
-                                counter.innerText = Math.ceil(count);
-                                setTimeout(updateCount, 25);
-                            } else {
-                                counter.innerText = target;
-                            }
-                        };
-                        updateCount();
-                    });
-                }
-            });
-        }, { threshold: 0.5 });
-
-        const metricsBar = document.querySelector('.metrics-bar');
-        if (metricsBar) observer.observe(metricsBar);
-
-        // 5. Calculadora Interactiva de Presupuestos
+        // 3. Calculadora Interactiva de Presupuestos
         const typeButtons = document.querySelectorAll('#typeGroup .pill');
         const speedButtons = document.querySelectorAll('#speedGroup .pill');
         const checkboxes = document.querySelectorAll('.custom-checkbox input');
@@ -733,7 +668,7 @@
         checkboxes.forEach(cb => cb.addEventListener('change', updateCalculator));
         updateCalculator();
 
-        // 6. Acordeón FAQ
+        // 4. Acordeón FAQ
         document.querySelectorAll('.faq-question').forEach(button => {
             button.addEventListener('click', () => {
                 const faqItem = button.parentElement;
@@ -743,7 +678,7 @@
             });
         });
 
-        // 7. Copiar Email
+        // 5. Copiar Email
         const copyBtn = document.getElementById('copyEmailBtn');
         const toast = document.getElementById('copyToast');
         const emailToCopy = "jesusvegavicente@gmail.com";

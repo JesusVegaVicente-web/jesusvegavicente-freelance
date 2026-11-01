@@ -1,6 +1,6 @@
 {
-  "summary":  "Landing page con animaciones vivas: partículas interactivas, efecto máquina de escribir, marquee infinito, spotlight en tarjetas y efectos 3D.",
-  "updatedAt":  "2026-11-01T15:08:03.288217900Z",
+  "summary":  "Corrección de diseño: eliminación de saltos bruscos en el título, métricas en una sola línea (48h, 100%), marquee pulido y tipografía estable sin errores visuales.",
+  "updatedAt":  "2026-11-01T15:17:56.246849500Z",
   "requestFeedback":  true,
   "userFacing":  true
 }
